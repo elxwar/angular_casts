@@ -1,0 +1,33 @@
+!!!
+%html{"ng-app" => ""}
+  %head
+    %title Angular Casts
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", media: "all"
+    = csrf_meta_tags
+  %body
+    = yield
+    %script{src: "//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"}
+    %script{src: "//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"}
+    = javascript_include_tag "application"
+
+-#<!DOCTYPE html>
+-#<html ng-app>
+-#<head>
+-#  <title>Angular Casts</title>
+-#  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+-#  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+-#  <%= stylesheet_link_tag "application", media: "all" %>
+-#  <%= csrf_meta_tags %>
+-#</head>
+-#<body>
+-#
+-#  <%= yield %>
+-#
+-#  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+-#  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
+-#  <%= javascript_include_tag "application" %>
+-#</body>
+-#
+-#</html>

@@ -1,0 +1,12 @@
+-#<div>
+-#  <label>Name:</label>
+-#  <input type="text" ng-model="yourName" placeholder="Enter a name here">
+-#  <hr>
+-#  <h1>Hello {{yourName}}!</h1>
+-#</div>
+
+%div
+  %label Name:
+  %input{"ng-model" => "yourName", placeholder: "Enter a name here", type: "text"}
+  %hr
+  %h1 Hello {{yourName}}!
