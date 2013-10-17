@@ -1,12 +1,16 @@
--#<div>
--#  <label>Name:</label>
--#  <input type="text" ng-model="yourName" placeholder="Enter a name here">
--#  <hr>
--#  <h1>Hello {{yourName}}!</h1>
--#</div>
+%div{"ng-controller" => "ScreencastsCtrl"}
+  #screencast-list-container
+    %ul
+      %li{"ng-repeat" => "screencast in screencasts", "ng-click" => "showScreencast(screencast)"}
+        %h3
+          {{screencast.title}}
+          %small ({{screencast.duration}})
 
-%div
-  %label Name:
-  %input{"ng-model" => "yourName", placeholder: "Enter a name here", type: "text"}
-  %hr
-  %h1 Hello {{yourName}}!
+  #screencast-view-container{"ng-show" => "selectedScreencast"}
+    %h2 {{selectedScreencast.title}}
+    %p {{selectedScreencast.summary}}
+    #player{"flow-player" => ""}
+    %p
+      Published at {{selectedScreencast.published_at | date: 'mediumDate'}} -
+      %a{"ng-href" => "{{selectedScreencast.link}}"} {{selectedScreencast.link}}
+
